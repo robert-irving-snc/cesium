@@ -55,6 +55,18 @@
               },
             },
             {
+              text: "KML Samples with Sectional Charts",
+              onselect: function () {
+                viewer.camera.flyHome(0);
+                viewer.dataSources.add(
+                  Cesium.KmlDataSource.load(
+                    "../../SampleData/kml/KmlSamplesWithSectionalCharts.kml",
+                    options
+                  )
+                );
+              },
+            },
+            {
               text: "KMZ with embedded data - GDP per capita",
               onselect: function () {
                 viewer.camera.flyHome(0);
