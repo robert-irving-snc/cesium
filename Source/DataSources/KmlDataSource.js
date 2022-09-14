@@ -3095,6 +3095,13 @@ function processNetworkLink(dataSource, node, processingData, deferredLoading) {
           queryStringValue(link, "viewBoundScale", namespaces.kml),
           1.0
         );
+        if (viewRefreshMode === "onRegion") {
+          oneTimeWarning(
+            "kml-refrehMode-onRegion",
+            "KML - Unsupported viewRefreshMode: onRegion"
+          );
+          return;
+        }
         const defaultViewFormat =
           viewRefreshMode === "onStop"
             ? "BBOX=[bboxWest],[bboxSouth],[bboxEast],[bboxNorth]"
